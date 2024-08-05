@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Category>
+﻿@model MyApp.Models.ViewModel.CategoryVM
 @{
     ViewData["Title"] = "Index";
 }
@@ -34,7 +34,7 @@
 
     </thead>
     <tbody>
-        @foreach(var items in Model)
+        @foreach(var items in Model.categories)
         {
            
         <tr>

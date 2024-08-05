@@ -8,22 +8,22 @@ using MyApp.Models.ViewModel;
 namespace MyApp.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    public class CategoryController : Controller
+    public class ProductController : Controller
     {
         private IUnitOfWork _unitofWork;
 
-        public CategoryController(IUnitOfWork unitofWork)
+        public ProductController(IUnitOfWork unitofWork)
         {
             _unitofWork = unitofWork;
         }
 
         public IActionResult Index()
         {
-            CategoryVM categoryvm = new CategoryVM
+            ProductVM productvm = new ProductVM
             {
-                categories = _unitofWork.Category.GetAll()
+                Products= _unitofWork.Product.GetAll()
             };
-            return View(categoryvm);
+            return View(productvm);
         }
 
         //[HttpGet]
