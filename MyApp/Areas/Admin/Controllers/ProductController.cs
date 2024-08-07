@@ -55,8 +55,8 @@ namespace MyApp.Areas.Admin.Controllers
             }
             else
             {
-                vm.Category = _unitofWork.Category.GetT(x => x.Id == id);
-                if (vm.Category == null)
+                vm.Product= _unitofWork.Product.GetT(x => x.Id == id);
+                if (vm.Product == null)
                 {
                     return NotFound();
                 }
