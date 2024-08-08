@@ -249,3 +249,8 @@ C:\Users\User\Desktop\MyApp\MyApp\bin\Debug\net6.0\MyApp.DataAccessLayer.dll
 C:\Users\User\Desktop\MyApp\MyApp\bin\Debug\net6.0\MyApp.Models.dll
 C:\Users\User\Desktop\MyApp\MyApp\bin\Debug\net6.0\MyApp.DataAccessLayer.pdb
 C:\Users\User\Desktop\MyApp\MyApp\bin\Debug\net6.0\MyApp.Models.pdb
+C:\Users\User\Desktop\MyApp\MyApp\bin\Debug\net6.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\User\Desktop\MyApp\MyApp\bin\Debug\net6.0\Microsoft.DotNet.PlatformAbstractions.dll
+C:\Users\User\Desktop\MyApp\MyApp\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\User\Desktop\MyApp\MyApp\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
+C:\Users\User\Desktop\MyApp\MyApp\obj\Debug\net6.0\MyApp.MvcApplicationPartsAssemblyInfo.cs

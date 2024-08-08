@@ -1,9 +1,13 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.AspNetCore.Routing.Constraints;
 using MyApp.DataAccessLayer;
 using MyApp.DataAccessLayer.Infrastructure.IRepository;
 using MyApp.DataAccessLayer.Infrastructure.Repository;
 using MyApp.Models;
 using MyApp.Models.ViewModel;
+using System.Globalization;
+using static System.Net.WebRequestMethods;
 
 namespace MyApp.Areas.Admin.Controllers
 {
@@ -11,10 +15,12 @@ namespace MyApp.Areas.Admin.Controllers
     public class ProductController : Controller
     {
         private IUnitOfWork _unitofWork;
+        private IWebHostEnvironment _hostingEnvironment;
 
-        public ProductController(IUnitOfWork unitofWork)
+        public ProductController(IUnitOfWork unitofWork, IWebHostEnvironment hostingEnvironment)
         {
             _unitofWork = unitofWork;
+            _hostingEnvironment = hostingEnvironment;
         }
 
         public IActionResult Index()
@@ -47,7 +53,15 @@ namespace MyApp.Areas.Admin.Controllers
         [HttpGet]
         public IActionResult CreateUpdate(int? id)
         {
-            CategoryVM vm = new CategoryVM();
+            ProductVM vm = new ProductVM()
+            {
+                Product = new(),
+                Categories = _unitofWork.Category.GetAll().Select(x=> new SelectListItem()
+                {
+                    Text = x.Name,
+                    Value = x.Id.ToString()
+                })
+            };
             if (id == null || id == 0)
             {
                 return View(vm);
@@ -70,19 +84,32 @@ namespace MyApp.Areas.Admin.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult CreateUpdate(CategoryVM vm)
+        public IActionResult CreateUpdate(ProductVM vm,IFormFile? file)
         {
             if (ModelState.IsValid)
             {
-                if (vm.Category.Id == 0) {
-                    _unitofWork.Category.Add(vm.Category);
-                    TempData["Success"] = "Category created successfully";
-                }
-                else
+                string fileName = String.Empty;
+                if(file!=null)
                 {
-                    _unitofWork.Category.Update(vm.Category);
-                    TempData["Success"] = "Category updated successfully";
+                    string uploadDir = Path.Combine(_hostingEnvironment.WebRootPath, "ProductImage");
+                    fileName = Guid.NewGuid().ToString()+"-"+file.FileName;
+                    string filePath = Path.Combine(uploadDir, fileName);
+                    using (var filestream = new FileStream(filePath, FileMode.Create)) 
+                    {
+                        file.CopyTo(filestream);
+                    }
+                    vm.Product.ImageUrl = filePath;
                 }
+                else if (string.IsNullOrEmpty(vm.Product.ImageUrl))
+                {
+                    // Set a default image URL if no image is uploaded and no existing image URL is present
+                    vm.Product.ImageUrl = "https://www.pexels.com/photo/blue-bmw-sedan-near-green-lawn-grass-170811/";
+                }
+                if (vm.Product.Id == 0)
+                {
+                    _unitofWork.Product.Add(vm.Product);
+                }
+                
                 
                 _unitofWork.Save();
               
