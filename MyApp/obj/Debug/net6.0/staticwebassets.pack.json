@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\MyApp.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\User\\Desktop\\MyApp\\MyApp\\wwwroot\\ProductImage\\54cf78ed-abbd-4903-8b55-17018e3c24ad-50018003.png",
+      "PackagePath": "staticwebassets\\ProductImage\\54cf78ed-abbd-4903-8b55-17018e3c24ad-50018003.png"
+    },
+    {
       "Id": "C:\\Users\\User\\Desktop\\MyApp\\MyApp\\wwwroot\\css\\StyleSheet.css",
       "PackagePath": "staticwebassets\\css\\StyleSheet.css"
     },
@@ -15,6 +19,10 @@
     {
       "Id": "C:\\Users\\User\\Desktop\\MyApp\\MyApp\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\MyApp\\MyApp\\wwwroot\\js\\Product.js",
+      "PackagePath": "staticwebassets\\js\\Product.js"
     },
     {
       "Id": "C:\\Users\\User\\Desktop\\MyApp\\MyApp\\wwwroot\\js\\site.js",

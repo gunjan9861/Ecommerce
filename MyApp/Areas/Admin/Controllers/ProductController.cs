@@ -22,12 +22,20 @@ namespace MyApp.Areas.Admin.Controllers
             _unitofWork = unitofWork;
             _hostingEnvironment = hostingEnvironment;
         }
+        //#region APICALL
+        //public IActionResult AllProducts()
+        //{
+        //    var products = _unitofWork.Product.GetAll();
+        //    return Json(new { data = products });
+        //}
+
+        //#endregion
 
         public IActionResult Index()
         {
             ProductVM productvm = new ProductVM
             {
-                Products= _unitofWork.Product.GetAll()
+                Products = _unitofWork.Product.GetAll(includeProperties = "Category")
             };
             return View(productvm);
         }
@@ -108,6 +116,7 @@ namespace MyApp.Areas.Admin.Controllers
                 if (vm.Product.Id == 0)
                 {
                     _unitofWork.Product.Add(vm.Product);
+                    TempData["Success"] = "Product successfully created";
                 }
                 
                 

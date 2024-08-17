@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "AaqaZA4A3Ii6YSNGPr6YFzlf4u9COCJwo8Tu/WOtdg4=",
+  "Hash": "DqZvqWK35/B3mZT795/bxAfAnBUyRwCVApQJ0XEQzcw=",
   "Source": "MyApp",
   "BasePath": "_content/MyApp",
   "Mode": "Default",
@@ -100,6 +100,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\User\\Desktop\\MyApp\\MyApp\\wwwroot\\js\\Product.js",
+      "SourceId": "MyApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\User\\Desktop\\MyApp\\MyApp\\wwwroot\\",
+      "BasePath": "_content/MyApp",
+      "RelativePath": "js/Product.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\Product.js"
     },
     {
       "Identity": "C:\\Users\\User\\Desktop\\MyApp\\MyApp\\wwwroot\\js\\site.js",
@@ -1086,6 +1103,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Identity": "C:\\Users\\User\\Desktop\\MyApp\\MyApp\\wwwroot\\ProductImage\\54cf78ed-abbd-4903-8b55-17018e3c24ad-50018003.png",
+      "SourceId": "MyApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\User\\Desktop\\MyApp\\MyApp\\wwwroot\\",
+      "BasePath": "_content/MyApp",
+      "RelativePath": "ProductImage/54cf78ed-abbd-4903-8b55-17018e3c24ad-50018003.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\ProductImage\\54cf78ed-abbd-4903-8b55-17018e3c24ad-50018003.png"
     }
   ]
 }
