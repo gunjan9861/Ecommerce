@@ -7,7 +7,7 @@ using MyApp.DataAccessLayer.Infrastructure.Repository;
 using MyApp.Models;
 using MyApp.Models.ViewModel;
 using System.Globalization;
-using static System.Net.WebRequestMethods;
+
 
 namespace MyApp.Areas.Admin.Controllers
 {
@@ -35,7 +35,7 @@ namespace MyApp.Areas.Admin.Controllers
         {
             ProductVM productvm = new ProductVM
             {
-                Products = _unitofWork.Product.GetAll(includeProperties = "Category")
+                Products = _unitofWork.Product.GetAll(includeProperties : "Category")
             };
             return View(productvm);
         }
